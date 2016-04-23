@@ -116,4 +116,8 @@ _If you prefer running test apps in Chrome with the `--file-access-from-files` f
 
 We include `SystemJS.import` at the end of the body to ensure that the body container is already present when `test.js` runs.
 
-Open up `test.html` through a local server or a file URL and that's it.
+# In Summary
+
+If you open up `test.html` through a local server or a file URL. You should see `Hello World` rendered on the web page.
+
+> Note: if you open up you're browser dev-tools and review the network tab, you should noticed quite a few network requests, such as requests for `babel`, `react` (and all it's related parts) as well as other items. Keep following the tutorial to find out how to reduce the request count and improve development speed.
