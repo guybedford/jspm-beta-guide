@@ -1,5 +1,7 @@
 ## Creating a Project
 
+### Initialize a new empty project
+
 ```
   jspm init .
 
@@ -10,39 +12,45 @@ Init Mode (Quick, Standard, Custom) [Quick]:
 
 Choose the following options (all defaults except the package name):
 
-* Init Mode: _Quick_
-* Local package name: _jspm-react-component_
-* package.json directories.lib: _src_
-* System.config browser baseURL: _/_
-* System.config transpiler: _babel_
+* Init Mode (Quick, Standard, Custom) [Quick]: `Quick`
+* Local package name (recommended, optional): `jspm-react-component`
+* package.json directories.lib [src]: `src`
+* System.config browser baseURL (optional): `/`
+* System.config local package main [jspm-react-component.js]: `jspm-react-component.js`
+* System.config transpiler (Babel, Traceur, TypeScript, None) [babel]: `babel`
 
 After which you should see:
 
 ```
      Updating registry cache...
-ok   Installed dev dependency plugin-babel to npm:systemjs-plugin-babel@^0.0.2 (0.0.2)
+ok   Installed dev dependency plugin-babel to npm:systemjs-plugin-babel@^0.0.9 (0.0.9)
      Install tree has no forks.
-     
+
 ok   Verified package.json at package.json
      Verified config files at jspm.config.js and jspm.browser.js
      Looking up loader files...
-       system-polyfills.js
        system.js
+       system-polyfills.js
+       system-polyfills.src.js
        system.js.map
        system.src.js
        system-polyfills.js.map
-       system-polyfills.src.js
-     
+
      Using loader versions:
-       systemjs@0.19.17
+       systemjs@0.19.26
 ok   Loader files downloaded successfully
 ```
 
-We're going to use a React hello world example here by first installing ReactDOM:
+### Install React
+
+We're going to use a React hello world example here by first installing [ReactDOM](https://www.npmjs.com/package/react-dom):
 
 ```
   jspm install react-dom
 ```
+
+> NOTE: `react-dom` above is an alias to `npm:react-dom`. Yo You can check it out in the [registry json](https://github.com/jspm/registry/blob/master/registry.json)
+
 
 ```
      Updating registry cache...
@@ -86,18 +94,23 @@ Create a new file, `test.html`:
 
 ```html
 <!docype html>
-<meta charset="utf-8">
-<script src="jspm_packages/system.js"></script>
-<script src="jspm.browser.js"></script>
-<script src="jspm.config.js"></script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm.browser.js"></script>
+    <script src="jspm.config.js"></script>
+</head>
 <body>
   <div id="container"></div>
   <script>
     SystemJS.import('test.js');
   </script>
+</body>
+</html>
 ```
 
-_Note that `jspm.browser.js` **must** be included before `jspm.config.js` as it sets the browser-specific paths that must be preset for `jspm.config.js` to work._
+> Note: `jspm.browser.js` **must** be included before `jspm.config.js` as it sets the browser-specific paths that must be preset for `jspm.config.js` to work._
 
 _If you prefer running test apps in Chrome with the `--file-access-from-files` flag enabled to save spinning up a local server set the `jspm.browser.js` `baseURL: '.'` during init, or directly in the `jspm.browser.js` file._
 
