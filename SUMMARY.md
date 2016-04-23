@@ -1,6 +1,6 @@
 * [Creating a Project](creating-a-project.md)
 * [Development Bundling](development-bundling.md)
-* [Hot-Reloading](hot-reloading.md)
+* [Hot-Reloading (optional)](hot-reloading.md)
 * [Package Configuration](package-configuration.md)
 * [Installing the JSX Babel Plugin](installing-the-jsx-babel-plugin.md)
 * [Universal JS with Server Rendering](universal-js-with-server-rendering.md)
