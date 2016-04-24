@@ -1,12 +1,12 @@
 ## Loading Libraries from CDN
 
-If we want to use React from a shared CDN instead of through SystemJS, we can build our bundle with react as and react-dom as excludes:
+If we want to use React from a shared CDN instead of through SystemJS, we can build our bundle with react and react-dom as excludes:
 
 ```
   jspm bundle test.js - react - react-dom app-bundle.js -m
 ```
 
-Then in `jspm.browser.js`, in order to provide the react and react-dom to the CDN versions, we need to add 
+Then in `jspm.browser.js`, in order to provide the react and react-dom to the CDN versions, we need to add
 custom paths configs:
 
 ```javascript
