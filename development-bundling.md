@@ -26,7 +26,7 @@ This will then display:
 
 ```
      Building the bundle tree for test.js...
-     
+
        github:jspm/nodelibs-process@0.2.0-alpha.json
        github:jspm/nodelibs-process@0.2.0-alpha/process.js
        jspm-react-component/component.js
@@ -36,10 +36,10 @@ This will then display:
        npm:systemjs-plugin-babel@0.0.5/babel-helpers/classCallCheck.js
        npm:systemjs-plugin-babel@0.0.5/babel-helpers/createClass.js
        npm:systemjs-plugin-babel@0.0.5/babel-helpers/inherits.js
-      
+
      npm:systemjs-plugin-babel@0.0.5/babel-helpers/possibleConstructorReturn.js
        test.js
-     
+
 ok   build.js added to config bundles.
 ok   Built into build.js with source maps, unminified.
 Watchman:  Watchman was not found in PATH.  See https://facebook.github.io/watchman/docs/install.html for installation instructions
@@ -49,6 +49,16 @@ Watchman:  Watchman was not found in PATH.  See https://facebook.github.io/watch
 Now any changes to any of the modules will automatically rebuild the bundle, refreshing the browser
 will then load the changes from that single bundle file for a quick page refresh.
 
+If you open the dev-tools and review the network requests made, you'll notice the large number of requests we originially saw in the [Creating a Project](creating-a-project.md) has been reduced significantly (from more than 100 requests to less than 10).
+
 _For performance, it is advisable to close the Chrome devtools when reloading the page, before opening them again as there is a [longer page load with devtools open](https://github.com/systemjs/systemjs/issues/1054)._
 
 > For the fastest workflow it is worth [installing Watchman](https://facebook.github.io/watchman/docs/install.html) as well.
+
+### How undo `bundle -wid`
+
+> Not part of this tutorial (so don't run this next command unless you really want to)
+
+If you happened to noticed that `jspm bundle test.js -wid` modified our configuration file with a `"bundles": {...}` node.
+
+This can easily be removed by running `jspm unbundle`.

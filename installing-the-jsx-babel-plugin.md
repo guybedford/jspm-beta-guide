@@ -1,6 +1,6 @@
 ## Installing the JSX Babel Plugin
 
-To upgrade our hello world example to use JSX, we can install the JSX React plugin for Babel since 
+To upgrade our hello world example to use JSX, we can install the JSX React plugin for Babel since
 we're already using Babel transpilation.
 
 ```
@@ -31,7 +31,28 @@ SystemJS.config({
 })
 ```
 
-> Alternatively we could also update our package to the `jsx` file extension here if we wish.
+> Alternatively we could also update our package to the `jsx` file extension here if we wish. (Note we updated `"main": "component.jsx",` and also renamed the actual component file.
+
+```javascript
+SystemJS.config({
+  ...
+
+  packages: {
+    "jspm-react-component": {
+      "main": "component.jsx",
+      "format": "esm",
+      "meta": {
+        "*.jsx": {
+          "babelOptions": {
+            "plugins": ["babel-plugin-transform-react-jsx"]
+          }
+        }
+      }
+    },
+    ...
+  }
+})
+```
 
 We can then update our component to use JSX syntax:
 

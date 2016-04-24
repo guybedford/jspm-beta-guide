@@ -1,11 +1,11 @@
-## Hot Reloading
+## Hot Reloading (optional)
 
 > This workflow is entirely optional, as managing application state comes with some complexities, but offers the fastest development experience if you're interested in setting it up.
 
 To further improve development performance over the development bundling workflow, we can use hot reloading to just replace the changed modules in the module registry in the browser,
 without having to refresh the whole page.
 
-Because hot-reloading requires a module registry in the browser to work, it works naturally on top of SystemJS, 
+Because hot-reloading requires a module registry in the browser to work, it works naturally on top of SystemJS,
 as was first demonstrated by [Glen Maddern](https://twitter.com/glenmaddern) with the jspm-server project.
 
 Here we will use Jiri Spac's [SystemJS Hot Reloader project](https://github.com/capaj/systemjs-hot-reloader):
@@ -42,7 +42,7 @@ Next edit the `jspm.browser.js` file to include `trace: true`, so that it reads:
 ```javascript
 SystemJS.config({
   baseURL: "/",
-  trace: true,
+  trace: true, // <----- added this...
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
@@ -51,7 +51,7 @@ SystemJS.config({
 });
 ```
 
-Finally, to emit the change events to the browser we install and run the local file event 
+Finally, to emit the change events to the browser we install and run the local file event
 emitter designed for systemjs-hot-reloader from the base directory of the project:
 
 ```
@@ -66,5 +66,5 @@ chokidar-socket-emitter
 With the `test.html` page open, any edits to the `src/component.js` file will now reflect instantly on save with full
 state replication.
 
-> Note that the [SystemJS Hot Reloader project](https://github.com/capaj/systemjs-hot-reloader) is still new 
+> Note that the [SystemJS Hot Reloader project](https://github.com/capaj/systemjs-hot-reloader) is still new
   and somewhat experimental. If you find a bug or use case that isn't supported contributions will likely be very welcome.
