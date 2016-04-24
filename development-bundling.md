@@ -55,5 +55,10 @@ _For performance, it is advisable to close the Chrome devtools when reloading th
 
 > For the fastest workflow it is worth [installing Watchman](https://facebook.github.io/watchman/docs/install.html) as well.
 
-TODO: Describe how to un-do what the `bundle -wid` does. (Can you just remove the `bundles:` config that JSPM added to `jspm.browser.js`?)
-TODO: Describe the internals of what this is doing... (The "magic" of it updating the jspm.browser.js)
+### How undo `bundle -wid`
+
+> Not part of this tutorial (so don't run this next command unless you really want to)
+
+If you happened to noticed that `jspm bundle test.js -wid` modified our configuration file with a `"bundles": {...}` node.
+
+This can easily be removed by running `jspm unbundle`.

@@ -42,11 +42,6 @@ SystemJS.config({
       "main": "component.jsx",
       "format": "esm",
       "meta": {
-        "*.js": {
-          "babelOptions": {
-            "plugins": ["babel-plugin-transform-react-jsx"]
-          }
-        },
         "*.jsx": {
           "babelOptions": {
             "plugins": ["babel-plugin-transform-react-jsx"]
