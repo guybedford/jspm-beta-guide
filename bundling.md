@@ -19,16 +19,21 @@ We then include this bundle file in our HTML after the configuration, but before
 
 ```html
 <!docype html>
-<meta charset="utf-8">
-<script src="jspm_packages/system.js"></script>
-<script src="jspm.browser.js"></script>
-<script src="jspm.config.js"></script>
-<script src="app-bundle.js"></script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm.browser.js"></script>
+    <script src="jspm.config.js"></script>
+    <script src="app-bundle.js"></script>
+</head>
 <body>
   <div id="container"></div>
   <script>
     SystemJS.import('test.js');
   </script>
+</body>
+</html>
 ```
 
 To tell SystemJS to run in production mode, edit `jspm.browser.js` and set the `production: true` config option
