@@ -85,7 +85,7 @@ let component = ReactDOM.render(React.createElement(HelloWorld), container);
 Create a new file, `test.html`:
 
 ```html
-<!docype html>
+<!doctype html>
 <meta charset="utf-8">
 <script src="jspm_packages/system.js"></script>
 <script src="jspm.browser.js"></script>
