@@ -51,4 +51,4 @@ will then load the changes from that single bundle file for a quick page refresh
 
 _For performance, it is advisable to close the Chrome devtools when reloading the page, before opening them again as there is a [longer page load with devtools open](https://github.com/systemjs/systemjs/issues/1054)._
 
-> For the fastest workflow it is worth [installing Watchman](https://facebook.github.io/watchman/docs/install.html) as well.
+> For the fastest workflow it is worth [installing Watchman](https://facebook.github.io/watchman/docs/install.html) as well. This lets jspm watch for file changes more efficiently.

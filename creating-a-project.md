@@ -1,5 +1,22 @@
 ## Creating a Project
 
+First, make sure you've installed jspm. You can install jspm like so:
+
+```
+npm install -g jspm@beta
+```
+
+And also it's best practice to install it locally to your project:
+
+```
+npm install --save-dev jspm@beta
+```
+
+_Once jspm 0.17 is stable and released you'll be able to just run `npm install jspm`, but for the beta version you must specify the version._
+
+
+Once you've got jspm installed, it's time to initialize a project:
+
 ```
   jspm init .
 
@@ -38,10 +55,10 @@ ok   Verified package.json at package.json
 ok   Loader files downloaded successfully
 ```
 
-We're going to use a React hello world example here by first installing ReactDOM:
+We're going to use a React hello world example here by first installing ReactDOM and also React.
 
 ```
-  jspm install react-dom
+  jspm install react react-dom
 ```
 
 ```
@@ -103,4 +120,4 @@ _If you prefer running test apps in Chrome with the `--file-access-from-files` f
 
 We include `SystemJS.import` at the end of the body to ensure that the body container is already present when `test.js` runs.
 
-Open up `test.html` through a local server or a file URL and that's it.
+Open up `test.html` through a local server or a file URL and you'll see 'Hello World' on the screen.
