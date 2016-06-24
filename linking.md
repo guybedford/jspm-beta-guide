@@ -36,7 +36,7 @@ ok   Symlinked jspm-react-component-published as npm:jspm-react-component-demo@0
 
 What just happened here?
 
-* `jspm link <div>` takes any path to a local folder.
+* `jspm link <dir>` takes any path to a local folder.
 * It then reads the package.json of that folder, and will detect the `name`, `version` and `registry`
   properties of the package.
 * The `jspm_packages/npm/jspm-react-component-demo@0.1.1` folder is then symlinked to our local `dist` folder.
