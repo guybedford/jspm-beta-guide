@@ -17,8 +17,8 @@ SystemJS.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
     "jspm-react-component/": "src/",
-    "npm:react@0.14.6": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js",
-    "npm:react-dom@0.14.6": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"
+    "npm:react@15.1.0": "https://fb.me/react-15.1.0.min.js",
+    "npm:react-dom@15.1.0": "https://fb.me/react-dom-15.1.0.min.js"
   }
 });
 ```

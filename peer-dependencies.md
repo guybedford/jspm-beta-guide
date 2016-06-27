@@ -26,10 +26,10 @@ jspm uninstall jspm-react-component-demo
 Then install React to an invalid peer range:
 
 ```
-jspm install npm:react@~0.13.2 --peer
+jspm install npm:react@~0.14 --peer
 ```
 
-Now if we install the published component that has a peer dependency on `npm:react@0.14.0`:
+Now if we install the published component that has a peer dependency on `npm:react@0.15.0`:
 
 ```
 jspm install npm:jspm-react-component-demo
@@ -41,13 +41,13 @@ the peer dependency conflict resolution prompt is displayed:
      Updating registry cache...
 
      Peer dependency conflict for react:
-       Currently installed as npm:react@0.13.3.
-       Package npm:jspm-react-component-demo@0.1.1 requires npm:react@^0.14.6.
+       Currently installed as npm:react@15.1.0.
+       Package npm:jspm-react-component-demo@0.1.1 requires npm:react@^15.1.0.
 
 Would you like to install react to the new install range? [Yes]: 
 ```
 
-If we select the default `Yes` option, we upgrade to React 0.14.6 and the remaining install runs smoothly.
+If we select the default `Yes` option, we upgrade to React 15.1.0 and the remaining install runs smoothly.
 
 Alternatively, if we enter `No`, we get the following prompt:
 

@@ -18,10 +18,9 @@ which is then removed by minification giving us the minimal download footprint f
 We then include this bundle file in our HTML after the configuration, but before our `SystemJS.import` statement:
 
 ```html
-<!docype html>
+<!doctype html>
 <meta charset="utf-8">
 <script src="jspm_packages/system.js"></script>
-<script src="jspm.browser.js"></script>
 <script src="jspm.config.js"></script>
 <script src="app-bundle.js"></script>
 <body>

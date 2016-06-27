@@ -16,17 +16,16 @@ best possible code optimization.
 Let's create a `dist` folder then output a built component into this folder:
 
 ```
-jspm build jspm-react-component - react dist/jspm-react-component.js \
+jspm build jspm-react-component/component.js dist/jspm-react-component.js \
+  --externals react
   --format umd --global-name jspmReactComponent --global-deps "{'react':'React'}" --skip-source-maps
 ```
 
 To break down the options we've provided:
 
-* On the first line, we indicate we want to build the _expression_ `jspm-react-component - react`
+* On the first line, we indicate we want to build the module `jspm-react-component/component.js`
   into the output build file `dist/jspm-react-component.js`.
-* This build _expression_ uses tree arithmetic. The use of the space-separated ` - ` 
-  operator indicates we build `jspm-react-component` and all its dependencies except for `react`
-  and all its dependencies.
+* `--externals react` indicates that React should be excluded from the build as a dependency.
 * `--format umd` outputs a built file that will work as AMD, CommonJS or a global.
 * `--global-name jspmReactComponent` means that when running as a global, it will create `global.jspmReactComponent`
   as the value of `jspm-react-component`
@@ -39,17 +38,17 @@ _Neither `--global-name` nor `--global-deps` would have been necessary if runnin
 We should then see the following output in the console:
 
 ```
-     Creating the single-file build for jspm-react-component - react...
+     Creating the single-file build for jspm-react-component/component.js...
      
        ┌─ jspm-react-component/component.js
-       ├─ npm:systemjs-plugin-babel@0.0.2/babel-helpers/classCallCheck.js
-       ├─ npm:systemjs-plugin-babel@0.0.2/babel-helpers/createClass.js
-       ├─ npm:systemjs-plugin-babel@0.0.2/babel-helpers/possibleConstructorReturn.js
-       └─ npm:systemjs-plugin-babel@0.0.2/babel-helpers/inherits.js
+       ├─ npm:systemjs-plugin-babel@0.0.12/babel-helpers/classCallCheck.js
+       ├─ npm:systemjs-plugin-babel@0.0.12/babel-helpers/possibleConstructorReturn.js
+       ├─ npm:systemjs-plugin-babel@0.0.12/babel-helpers/createClass.js
+       └─ npm:systemjs-plugin-babel@0.0.12/babel-helpers/inherits.js
      
 ok   Fully-optimized - entire tree built via Rollup static optimization.
      
-ok   Built into dist/jspm-react-component.js with source maps, unminified as umd.
+ok   Built into dist/jspm-react-component.js, unminified as umd.
 ```
 
 _Fully-optimized_ indicates that the entire tree has been built with Rollup, including

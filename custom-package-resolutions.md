@@ -27,12 +27,9 @@ Running `jspm clean` will then remove any package install traces of react and re
 
 ```
 jspm clean
-     Clearing configuration for npm:react@0.14.6
-     Removing unused package.json override npm:fbjs@0.6.1
-     Removing unused package.json override npm:react@0.14.6
-     Removing package files for npm:fbjs@0.6.1
-     Removing package files for npm:react-dom@0.14.6
-     Removing package files for npm:react@0.14.6
+     Clearing configuration for npm:react@15.1.0
+     Clearing configuration for npm:fbjs@0.8.3
+     ...
 
 ok   Project cleaned successfully.
 ```
@@ -44,8 +41,8 @@ SystemJS.config({
   ...
   paths: {
     ...
-    "react-cdn": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js",
-    "react-dom-cdn": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"
+    "react-cdn": "https://fb.me/react-15.1.0.min.js",
+    "react-dom-cdn": "https://fb.me/react-dom-15.1.0.min.js"
   }
 });
 ```

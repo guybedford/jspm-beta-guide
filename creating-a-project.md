@@ -25,34 +25,44 @@ Once you've got jspm installed, it's time to initialize a project:
 Init Mode (Quick, Standard, Custom) [Quick]:
 ```
 
-Choose the following options (all defaults except the package name):
+Choose the following options (all defaults except the package name, jspm-react-component):
 
-* Init Mode: _Quick_
-* Local package name: _jspm-react-component_
-* package.json directories.lib: _src_
-* System.config browser baseURL: _/_
-* System.config transpiler: _babel_
+* Init mode (Quick, Standard, Custom) [Quick]: Quick
+* Local package name (recommended, optional): jspm-react-component
+* package.json directories.baseURL: .
+* package.json configFiles folder [./]: ./
+* Use package.json configFiles.jspm:dev? [No]: No
+* SystemJS.config browser baseURL (optional): /
+* SystemJS.config Node local project path [src/]: src/
+* SystemJS.config local package main [app.js]: app.js
+* SystemJS.config transpiler (Babel, Traceur, TypeScript, None) [babel]: babel
 
 After which you should see:
 
 ```
      Updating registry cache...
-ok   Installed dev dependency plugin-babel to npm:systemjs-plugin-babel@^0.0.2 (0.0.2)
+ok   Installed dev dependency plugin-babel to npm:systemjs-plugin-babel@^0.0.12
+     (0.0.12)
      Install tree has no forks.
      
-ok   Verified package.json at package.json
-     Verified config files at jspm.config.js and jspm.browser.js
+ok   jspm init completed. For the standard project layout see
+     http://jspm.io/0.17-beta-guide/creating-a-project.html.
+     To rerun these init prompts at any time use jspm init.
+     
+ok   package.json at package.json
+     Config at jspm.config.js
      Looking up loader files...
-       system-polyfills.js
        system.js
+       system-polyfills.src.js
        system.js.map
+       system-polyfills.js
        system.src.js
        system-polyfills.js.map
-       system-polyfills.src.js
      
      Using loader versions:
-       systemjs@0.19.17
+       systemjs@0.19.31
 ok   Loader files downloaded successfully
+
 ```
 
 We're going to use a React hello world example here by first installing ReactDOM and also React.
@@ -105,7 +115,6 @@ Create a new file, `test.html`:
 <!doctype html>
 <meta charset="utf-8">
 <script src="jspm_packages/system.js"></script>
-<script src="jspm.browser.js"></script>
 <script src="jspm.config.js"></script>
 <body>
   <div id="container"></div>
@@ -114,9 +123,7 @@ Create a new file, `test.html`:
   </script>
 ```
 
-_Note that `jspm.browser.js` **must** be included before `jspm.config.js` as it sets the browser-specific paths that must be preset for `jspm.config.js` to work._
-
-_If you prefer running test apps in Chrome with the `--file-access-from-files` flag enabled to save spinning up a local server set the `jspm.browser.js` `baseURL: '.'` during init, or directly in the `jspm.browser.js` file._
+_If you prefer running test apps in Chrome with the `--file-access-from-files` flag enabled to save spinning up a local server set the `jspm.config.js` `browserConfig.baseURL: '.'` during init, or directly in the `jspm.config.js` file._
 
 We include `SystemJS.import` at the end of the body to ensure that the body container is already present when `test.js` runs.
 

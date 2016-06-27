@@ -30,14 +30,13 @@ This will then display:
        github:jspm/nodelibs-process@0.2.0-alpha.json
        github:jspm/nodelibs-process@0.2.0-alpha/process.js
        jspm-react-component/component.js
-       npm:fbjs@0.6.1.json
+       npm:fbjs@0.8.3.json
 ...
-       npm:systemjs-plugin-babel@0.0.5.json
-       npm:systemjs-plugin-babel@0.0.5/babel-helpers/classCallCheck.js
-       npm:systemjs-plugin-babel@0.0.5/babel-helpers/createClass.js
-       npm:systemjs-plugin-babel@0.0.5/babel-helpers/inherits.js
-      
-     npm:systemjs-plugin-babel@0.0.5/babel-helpers/possibleConstructorReturn.js
+       npm:systemjs-plugin-babel@0.0.12.json
+       npm:systemjs-plugin-babel@0.0.12/babel-helpers/classCallCheck.js
+       npm:systemjs-plugin-babel@0.0.12/babel-helpers/createClass.js
+       npm:systemjs-plugin-babel@0.0.12/babel-helpers/inherits.js
+       npm:systemjs-plugin-babel@0.0.12/babel-helpers/possibleConstructorReturn.js
        test.js
      
 ok   build.js added to config bundles.

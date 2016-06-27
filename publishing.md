@@ -11,7 +11,7 @@ we can just create a new package.json file inside our `dist` folder, `dist/packa
   "version": "0.1.1",
   "registry": "npm",
   "peerDependencies": {
-    "react": "^0.14.6"
+    "react": "^15.1.0"
   },
   "jspmPackage": true,
   "main": "jspm-react-component.js",
