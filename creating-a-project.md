@@ -113,14 +113,19 @@ Create a new file, `test.html`:
 
 ```html
 <!doctype html>
-<meta charset="utf-8">
-<script src="jspm_packages/system.js"></script>
-<script src="jspm.config.js"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="jspm_packages/system.js"></script>
+  <script src="jspm.config.js"></script>
+</head>
 <body>
   <div id="container"></div>
   <script>
     SystemJS.import('test.js');
   </script>
+</body>
+</html>
 ```
 
 _If you prefer running test apps in Chrome with the `--file-access-from-files` flag enabled to save spinning up a local server set the `jspm.config.js` `browserConfig.baseURL: '.'` during init, or directly in the `jspm.config.js` file._
